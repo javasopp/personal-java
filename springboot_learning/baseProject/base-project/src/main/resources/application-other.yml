@@ -1,0 +1,17 @@
+#配置线程
+thread:
+  #默认线程数
+  poolsize: 100
+  #最大线程数
+  maxsize: 100
+  #允许空闲时间,默认（秒）
+  keep-alive-time: 10
+  #缓冲队列大小
+  capacity: 200
+  #线程前缀名：
+  name-prefix: "my-thread"
+
+#分布式id生成
+workId: 2
+
+dataCenterId: 1

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mds.auth.mapper.SysUserMapper">
+
+    <select id="getNavPermissionIds" resultType="java.lang.Long">
+        SELECT DISTINCT
+            rp.permission_id
+        FROM
+            sys_user_role ur
+                LEFT JOIN sys_role_permission rp ON ur.role_id = rp.role_id
+        WHERE
+            ur.user_id = #{userId}
+
+    </select>
+
+    <select id="listByMenuId" resultType="com.mds.auth.entity.SysUser">
+
+        SELECT DISTINCT su.*
+        FROM sys_user_role ur
+                 LEFT JOIN sys_role_menu rm ON ur.role_id = rm.role_id
+                 LEFT JOIN sys_user su ON ur.user_id = su.id
+        WHERE rm.menu_id = #{menuId}
+    </select>
+</mapper>

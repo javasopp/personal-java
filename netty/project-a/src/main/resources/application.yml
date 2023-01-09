@@ -1,0 +1,25 @@
+server:
+  port: 81
+  servlet:
+    context-path: /auth
+
+netty:
+  tcp:
+    server:
+      host: 192.168.8.100
+      port: 7000
+    client:
+      port: 7000
+
+spring:
+  profiles:
+    active: jwt,prod,redis,druid
+  datasource:
+    username: root
+    password: root
+
+mybatis-plus:
+  mapper-locations: classpath*:/mappers/**Mapper.xml
+  type-aliases-package: com.mds.*.entity
+
+security-url: /login,/logout,/captcha,/favicon.ico,/druid/**,/sys/user/select

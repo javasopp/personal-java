@@ -1,0 +1,10 @@
+jwt:
+  #jwt 的秘钥
+  route:
+    authentication:
+      path: /auth
+  header: token
+  # 过期时间，300s 5*60
+  expiration: 1800
+  secret: sopp.icu
+  list: /auth/login,/auth/select

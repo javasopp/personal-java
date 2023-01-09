@@ -1,0 +1,26 @@
+server:
+  port: 80
+  servlet:
+    context-path: /
+
+# 客户端A的具体配置信息
+client:
+  # 客户端类型
+  type: 1
+  # 客户端名字
+  name: testA
+  # 是否临时连接
+  status: 0
+  # 知识库类型
+  knowledge: 1
+
+# netty配置
+netty:
+  tcp:
+    # 设置端口
+    server:
+      port: 7001
+
+spring:
+  profiles:
+    active: redis

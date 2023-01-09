@@ -1,0 +1,17 @@
+#配置端口
+server:
+  port: 80
+  servlet:
+    context-path: /sopp-all
+
+#配置mp
+mybatis-plus:
+  #配置xml
+  mapperLocations: classpath:/mappers/**/*.xml
+  #配置实体类映射。
+  type-aliases-package: com.sopp.all.entity
+
+spring:
+  profiles:
+    active: prod,druid,mq,redis,other
+
